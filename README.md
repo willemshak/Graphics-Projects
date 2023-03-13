@@ -1,6 +1,9 @@
 # Graphics-Projects
 A collection of various small JavaScript and Processing graphics projects done for fun!
 
+If you would like to see projects done in my coursework, reach out to me individually, as I can't share those projects publically. These projects include:
+Image Processing Application, BGP Router,  FTP Client, Marble Solitaire Game, Sliding Puzzle Solver, Connect Four Bot, Bullet Shooting Game, Kruskal's with DFS and BFS.
+
 ----------------------------
 Descriptions of each project
 ----------------------------
