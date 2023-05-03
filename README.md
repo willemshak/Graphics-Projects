@@ -2,7 +2,7 @@
 A collection of various small JavaScript and Processing graphics projects done for fun!
 
 If you would like to see projects done in my coursework, reach out to me individually at willem.shak@gmail.com, as I can't share those projects publically. These projects include:
-Image Processing Application, Mini Shell, Custom Memory Allocator, Multi-Threaded Merge Sort, BGP Router, Reliable Transport Protocol, FTP Client, Marble Solitaire Game, Connect Four Bot w/ min-max algorithm, Sliding Puzzle Solver w/ A*, Bullet Shooting Game, Kruskal's generated Maze with DFS and BFS visualizations.
+Image Processing Application, Mini Shell, Custom Memory Allocator, Multi-Threaded Merge Sort, BGP Router, Reliable Transport Protocol, FTP Client, Marble Solitaire Game, Distributed Key-Value Database, FUSE File System, Web Crawler, Sliding Puzzle Solver w/ A*, Bullet Shooting Game, Kruskal's generated Maze with DFS and BFS visualizations.
 
 ----------------------------
 Descriptions of each project
