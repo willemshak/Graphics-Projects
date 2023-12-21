@@ -1,0 +1,160 @@
+-------------------------
+How to use our program:
+-------------------------
+Run the main method and then enter menu for a list of commands you can use.
+
+You have to load an image first by typing:
+"load file-path new-name"
+
+The file-path that you enter is wherever you store the image that you want to manipulate.
+The new-name that you enter will be how to refer to that image that you load.
+
+Once you load an image, once you load an image, you can make it grayscale based on either red,
+green, blue components or value, intensity, luma components.
+To do that, you would enter:
+"red-component name new-name"
+"green-component name new-name"
+"blue-component name new-name"
+"value-component name new-name"
+"intensity-component name new-name"
+"luma-component name new-name"
+
+The name that you enter is the name of the file that you want to do the command to. And to layer
+commands, the name you enter should be the new-name from the previous action.
+
+You can also change the brightness of the image by entering either:
+"brighten num-to-brighten-by name new-name"
+"darken num-to-darken-by name new-name"
+
+The value that you enter after either brighten or darken must be a non-negative integer. Name is
+the name of the file that you want to change the brightness of and new-name is what you want to
+call it after changing the brightness.
+
+You can also flip the image either horizontally or vertically and to do that, you would type:
+"horizontal-flip name new-name"
+"vertical-flip name new-name"
+
+After making all modifications that you want to make to your image that you loaded, you can save
+the image by typing:
+"save name path"
+
+Similar to when you are loading an image, "path" is where you want the image to save on your
+computer and name is the current name of the image.
+
+--------------------
+Script of commands:
+--------------------
+To use this script of commands, you have to have a folder called "images" inside of the assignment4
+folder and you should name an image inside of that folder as "test.ppm". To use these commands, type
+each line at a time and then hit enter after each line and after every command, you will see a
+message of what change was just made to the image.
+
+"load images/test.ppm test"
+"brighten 20 test bright-test"
+"horizontal-flip bright-test bright-horiz"
+"green-component bright-horiz green-bright-horiz"
+"save green-bright-horiz res/green-bright-horiz.ppm"
+
+This script loads an image, brightens it by 20, flips it horizontally, makes it grayscale based on
+the green component, and then saves it.
+
+-------------------
+Our design choices:
+-------------------
+We made an IImageModel interface and imagemodel class to have the methods that we perform on the
+image and the interface allows us to be able to incorporate other models of images into our program
+while not having to change too much code.
+Our imagemodel class has a hashmap with the filename as the key and a 2D array of pixels as
+the value.
+We also made a Pixel interface to have the methods that are done on individual pixels that make up
+the 2D array which is stored in the hashmap in the imagemodel class.
+We made an RGBPixel class which implements the Pixel interface to have the implementations of the
+methods in the Pixel interface.
+The reason we chose to have a Pixel interface is because
+with our design, it is easy to work with CMYK and other color models instead of keeping our program
+specific to RGB.
+We made an ImageControllerImpl to handle user input. We used the command design pattern so that if we
+wanted to add new functionality, we would only have to add a class to the Commands folder and one
+method inside of the model instead of having to change around a lot of code.
+We made an imagecontroller interface to have the one method that every class in our controller uses
+which is execute().
+Finally, we made an imagetextview interface and ImageTextViewImpl class to handle messages to show
+to the user based on the input that they give. By making an interface, it allows us to be able to
+implement a method to show the user their image with text.
+
+----------------
+Image Citation:
+----------------
+We made our own ppm, jpg, bmp, and png files that we used to test, so we are the owners and we
+authorize that image's use in the project.
+
+----------------------------------
+changes/additions for assignment 5:
+----------------------------------
+We didn't need to make any design changes besides adding classes to add functionality.
+
+We added a PNGPixel class that allows us to keep track of the pixels for a PNG file type since a PNG
+file also has an alpha and not just RGB.
+
+In the ImageModel class:
+We made helper methods called loadPPM, loadJPG, and loadPNG that get called from the load method
+based on the extension of the file.
+We also made helper methods for save called savePNG, saveRGB, and savePPM which get called by the
+save method based on the extension that the user enters for when they are saving an image.
+We also implemented the methods blur, sharpen, sepia, and grayscale and made two helper methods
+called applyTransformation, which we call in sepia and grayscale. And the other helper method we
+made is called applyMatrix which we call in blur and sharpen.
+
+In the controller:
+We created classes that are commands called Blur, Grayscale, Sepia, and Sharpen which get called in
+the ImageControllerImpl.
+
+In the ImageControllerImpl class:
+In our execute method, we added cases for when the command is "blur", "sharpen", "sepia",
+"grayscale", and "script".
+We also added a method called readTextFile which is called in the execute method when the user
+enters "script filePath" where filePath is the path of the text file.
+
+----------------------------------
+changes/additions for assignment 6:
+----------------------------------
+We didn't have to make any design changes in order to incorporate the requirements of this
+assignment.
+
+We added an ImageGUIView class in the view which sets up the GUI and allows the user to interact
+with it.
+
+We also added methods in the model to get Histograms of the red, gree, blue, and intensity
+components.
+
+We changed the main method to allow command line arguments.
+
+---------------------------------------
+Parts of the program that are complete:
+---------------------------------------
+Our program has all of the requirements of the assignment complete.
+
+It allows you to load an image of types png/jpg/bmp/ppm and perform actions on it including
+red-component grayscale, green-component grayscale, blue-component grayscale, luma-component
+grayscale, intensity-component grayscale, value-component grayscale, bright, darken, blur, sharpen,
+flip horizontally, flip vertically, apply a sepia filter, apply a grayscale filter, and save it as
+png/jpg/bmp/ppm. Our program also supports the ability to accept a script file as a command line
+option and also allows you to interact when you don't give it a script file. Our program allows you
+to switch between types of images as well.
+
+The GUI is also complete. It has all of the functionality mentioned above and is displays histograms
+for red, green, blue, and intensity components. The GUI shows the image being currently worked on
+and allows the user to scroll. Histograms are also visible at all times and update as the user
+makes changes to the image. The GUI exposes all the required features of the program including
+flips, component visualization, greyscale, blurring, sharpening and sepia. Saving allows the user to
+save what they are currently seeing and save as a type that they want from the drop down menu and
+to any folder location. The user can specify which image they want to save or load from their
+computer. Error messages and relevant information are shown to the user through the GUI.
+
+----------------------------------------
+Changes made to incorporate Downscaling
+----------------------------------------
+I implemented a few methods in the model to help me create a downscaled version of an image.
+I didnt have to change my design at all, just implement a new command object which executes the
+downscale, and add that command to the command design pattern in the controller. After writing
+the methods which do the actual downscaling, it was easy to implement into my existing design.

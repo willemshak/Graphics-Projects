@@ -1,0 +1,90 @@
+menu
+load res/test.ppm test
+brighten 20 test b-test
+horizontal-flip b-test bh-test
+green-component bh-test bhg-test
+blur bhg-test bhgb-test
+save bhgb-test res/start-ppm-bhgb1.ppm
+save bhgb-test res/start-ppm-bhgb2.jpg
+save bhgb-test res/start-ppm-bhgb3.jpeg
+save bhgb-test res/start-ppm-bhgb4.bmp
+save bhgb-test res/start-ppm-bhgb5.png
+
+load res/jpg.jpeg test2
+darken 10 test2 d-test2
+vertical-flip d-test2 dv-test2
+red-component dv-test2 dvr-test2
+sharpen dvr-test2 dvrs-test2
+save dvrs-test2 res/start-jpg-dvrs1.ppm
+save dvrs-test2 res/start-jpg-dvrs2.jpg
+save dvrs-test2 res/start-jpg-dvrs3.jpeg
+save dvrs-test2 res/start-jpg-dvrs4.bmp
+save dvrs-test2 res/start-jpg-dvrs5.png
+
+load res/bmp.bmp test3
+darken 5 test3 d-test3
+vertical-flip d-test3 dv-test3
+blue-component dv-test3 dvb-test3
+sharpen dvb-test3 dvbs-test3
+save dvbs-test3 res/start-bmp-dvbs1.ppm
+save dvbs-test3 res/start-bmp-dvbs2.jpg
+save dvbs-test3 res/start-bmp-dvbs3.jpeg
+save dvbs-test3 res/start-bmp-dvbs4.bmp
+save dvbs-test3 res/start-bmp-dvbs5.png
+
+load res/jpg.jpeg test4
+brighten 10 test4 b-test4
+vertical-flip b-test4 bv-test4
+grayscale bv-test4 bvgr-test4
+blur bvgr-test4 bvgrb-test4
+save bvgrb-test4 res/start-jpg-bvgrb1.ppm
+save bvgrb-test4 res/start-jpg-bvgrb2.jpg
+save bvgrb-test4 res/start-jpg-bvgrb3.jpeg
+save bvgrb-test4 res/start-jpg-bvgrb4.bmp
+save bvgrb-test4 res/start-jpg-bvgrb5.png
+
+load res/png.png test5
+darken 20 test5 b-test5
+horizontal-flip b-test5 bh-test5
+sepia bh-test5 bhs-test5
+sharpen bhs-test5 bhss-test5
+save bhss-test5 res/start-png-bhss1.ppm
+save bhss-test5 res/start-png-bhss2.jpg
+save bhss-test5 res/start-png-bhss3.jpeg
+save bhss-test5 res/start-png-bhss4.bmp
+save bhss-test5 res/start-png-bhss5.png
+
+load res/jpg.jpeg test6
+brighten 10 test6 b-test6
+horizontal-flip b-test6 bh-test6
+intensity-component bh-test6 bhi-test6
+blur bhi-test6 bhib-test6
+save bhib-test6 res/start-jpg-bhib1.ppm
+save bhib-test6 res/start-jpg-bhib2.jpg
+save bhib-test6 res/start-jpg-bhib3.jpeg
+save bhib-test6 res/start-jpg-bhib4.bmp
+save bhib-test6 res/start-jpg-bhib5.png
+
+load res/test.ppm test7
+brighten 15 test7 b-test7
+horizontal-flip b-test7 bh-test7
+luma-component bh-test7 bhl-test7
+blur bhl-test7 bhlb-test7
+save bhlb-test7 res/start-ppm-bhlb1.ppm
+save bhlb-test7 res/start-ppm-bhlb2.jpg
+save bhlb-test7 res/start-ppm-bhlb3.jpeg
+save bhlb-test7 res/start-ppm-bhlb4.bmp
+save bhlb-test7 res/start-ppm-bhlb5.png
+
+load res/bmp.bmp test8
+darken 30 test8 d-test8
+horizontal-flip d-test8 dh-test8
+value-component dh-test8 dhv-test8
+blur dhv-test8 dhvb-test8
+save dhvb-test8 res/start-bmp-dhvb1.ppm
+save dhvb-test8 res/start-bmp-dhvb2.jpg
+save dhvb-test8 res/start-bmp-dhvb3.jpeg
+save dhvb-test8 res/start-bmp-dhvb4.bmp
+save dhvb-test8 res/start-bmp-dhvb5.png
+q
+

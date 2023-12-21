@@ -1,0 +1,66 @@
+-------------------
+How to use the GUI:
+-------------------
+- Click the load button and navigate to the image that you want loaded.
+- If the image type is supported and the image exists, then you will see a message that the image
+  has been loaded successfully.
+- Once the image is loaded, you will also see histograms of the red, green, blue, and intensity
+  components.
+- You can perform operations on the image by selecting an option from the drop down menu underneath
+  the label "Operation to execute on the image" and then clicking the apply button.
+- When you perform any operation from that drop down menu, the image being displayed will update,
+  the histograms will update, and you will see a message that says that the operation you selected
+  has been applied to the image successfully.
+- When doing darken or brighten, we made it so that selecting either once and then clicking apply
+  it either darkens or lightens the image by 5 units (the values range from 0 to 255).
+- When you want to save, first click the save path button and navigate to where you want to save the
+  image.
+- When you choose the location, the GUI will display a message that says "The save is" and then the
+  path you selected.
+- Then, in the text box called save name, enter what name you want to save the image as.
+- Then, from the drop down menu called save type, select the type that you want to save the image
+  as.
+- And finally, click the save button and you should get a message on the GUI that says that the
+  image was successfully saved at the file path you previously chose.
+
+--------------------------
+Supported script commands:
+--------------------------
+load filePath newName
+brighten int oldName newName
+darken int oldName newName
+horizontal-flip oldName newName
+vertical-flip oldName newName
+green-component oldName newName
+red-component oldName newName
+blue-component oldName newName
+sepia oldName newName
+grayscale oldName newName
+intensity-component oldName newName
+luma-component oldName newName
+value-component oldName newName
+blur oldName newName
+sharpen oldName newName
+save oldName filePath
+script filePath
+q
+
+------------------------------
+script commands explanations:
+------------------------------
+To use a script file, first enter "script" and then the path of the file that you are accessing
+For all of the commands, the oldName is the current name of the file that you are changing and
+newName is the name that you want to refer to the changed image as.
+For all of the commands, the order of entries must be the same as specified above.
+
+To use the given script file, save that file in the assignment folder and first run the main method
+and then type
+"script CommandLines.txt" and then hit enter.
+The program will display messages for all the commands being performed on the image and then in the
+res folder in the assignment folder, there should be 40 new images saved with different combinations
+of commands done.
+
+When not using the script file, the image must be loaded before calling any of the other commands.
+
+To quit the program, nothing besides "q" or "Q" needs to be entered.
+
