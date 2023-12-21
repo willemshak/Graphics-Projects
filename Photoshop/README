@@ -1,6 +1,8 @@
 -------------------------
 How to use our program:
 -------------------------
+If you want the GUI View, run the Assignment4.jar inside of /out/artifacts/Assignment4_jar/Assignment4.jar
+
 Run the main method and then enter menu for a list of commands you can use.
 
 You have to load an image first by typing:
